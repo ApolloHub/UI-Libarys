@@ -2,7 +2,7 @@
 --example provided at bottom
 
 do
-	local ui = game:GetService("CoreGui"):FindFirstChild("helioslib")
+	local ui = game:GetService("CoreGui"):FindFirstChild("Zenlib")
 	if ui then
 		ui:Destroy()
 	end
@@ -73,20 +73,20 @@ local function MakeDraggable(topbarobject, object)
 	)
 end
 
-local helioslib = Instance.new("ScreenGui")
-helioslib.Name = "helioslib"
-helioslib.Parent = game.CoreGui
-helioslib.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+local Zenlib = Instance.new("ScreenGui")
+Zenlib.Name = "Zenlib"
+Zenlib.Parent = game.CoreGui
+Zenlib.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 local usi = game:GetService("UserInputService")
 local uitoggled = false
 usi.InputBegan:Connect(
 	function(io, p)
 		if io.KeyCode == Enum.KeyCode.RightShift then
 			if uitoggled == false then
-				helioslib.Enabled = false
+				Zenlib.Enabled = false
 				uitoggled = true
 			else
-				helioslib.Enabled = true
+				Zenlib.Enabled = true
 				uitoggled = false
 			end
 		end
@@ -115,7 +115,7 @@ coroutine.wrap(
 )()
 
 function lib:notification(textt)
-	for i, v in next, helioslib:GetChildren() do
+	for i, v in next, Zenlib:GetChildren() do
 		if v.Name == "notificationframe" then
 			v:Destroy()
 		end
@@ -132,7 +132,7 @@ function lib:notification(textt)
 
 
 	notificationframe.Name = "notificationframe"
-	notificationframe.Parent = helioslib
+	notificationframe.Parent = Zenlib
 	notificationframe.AnchorPoint = Vector2.new(0.5, 0.5)
 	notificationframe.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 	notificationframe.Position = UDim2.new(0.5, 0, 0.50856787, 0)
@@ -255,7 +255,7 @@ function lib:MainWindow(text)
 	local dragframe = Instance.new("Frame")
 
 	mainframe.Name = "mainframe"
-	mainframe.Parent = helioslib
+	mainframe.Parent = Zenlib
 	mainframe.AnchorPoint = Vector2.new(0.5, 0.5)
 	mainframe.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 	mainframe.Position = UDim2.new(0.5, 0, 0.5, 0)
@@ -282,7 +282,7 @@ function lib:MainWindow(text)
 	title.Position = UDim2.new(0.172839507, 0, 0.0558659211, 0)
 	title.Size = UDim2.new(0, 106, 0, 28)
 	title.Font = Enum.Font.GothamSemibold
-	title.Text = "Helios Hub"
+	title.Text = "Zen Ware"
 	title.TextColor3 = Color3.fromRGB(255, 255, 255)
 	title.TextSize = 18.000
 	title.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
